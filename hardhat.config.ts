@@ -15,7 +15,12 @@ const { API_URL, PRIVATE_KEY } = process.env;
 const config: HardhatUserConfig = {
   solidity: "0.8.4",
   networks: {
-   hardhat: {},
+   hardhat: {
+      forking: {
+        url: API_URL!,
+        blockNumber: 10629770,
+      }
+    },
     rinkeby: {
        url: API_URL,
        accounts: [`${PRIVATE_KEY}`]
